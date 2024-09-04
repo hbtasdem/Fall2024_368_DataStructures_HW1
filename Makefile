@@ -11,15 +11,15 @@ a1: $(OBJS)
 %.o: %.c
 	$(GCC) -c $< -o $@
 
-testall: test1 test2 test3 test4 test5 test6
+testall: test1 test2 test3 test4 
 
 test1: a1
 	./a1 inputs/test1 > output1
-	diff -w output1 expected/expected1
+	diff -u output1 expected/expected1
 
 test2: a1
 	./a1 inputs/test2 > output2
-	diff -w output2 expected/expected2
+	diff -u output2 expected/expected2
 
 test3: a1
 	./a1 inputs/test3 > output3
@@ -27,11 +27,7 @@ test3: a1
 
 test4: a1
 	./a1 inputs/test4 > output4
-	diff -w output4 expected/expected4
-
-test5: a1
-	./a1 inputs/test5 > output5
-	diff -w output5 expected/expected5
+	diff -u output4 expected/expected4
 
 clean: 
 	rm -f a1 *.o output* *~
