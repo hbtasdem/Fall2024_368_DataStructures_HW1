@@ -14,19 +14,19 @@ a1: $(OBJS)
 testall: test1 test2 test3 test4 
 
 test1: a1
-	./a1 inputs/test1 > output1
+	./a1 0 > output1
 	diff -u output1 expected/expected1
 
 test2: a1
-	./a1 inputs/test2 > output2
+	./a1 30 > output2
 	diff -u output2 expected/expected2
 
 test3: a1
-	./a1 inputs/test3 > output3
+	./a1 16 > output3
 	diff -u output3 expected/expected3
 
 test4: a1
-	./a1 inputs/test4 > output4
+	./a1 6 > output4
 	diff -u output4 expected/expected4
 
 clean: 
