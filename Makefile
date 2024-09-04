@@ -23,7 +23,7 @@ test2: a1
 
 test3: a1
 	./a1 inputs/test3 > output3
-	diff -w output3 expected/expected3
+	diff -u output3 expected/expected3
 
 test4: a1
 	./a1 inputs/test4 > output4
