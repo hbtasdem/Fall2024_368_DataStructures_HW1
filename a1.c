@@ -11,6 +11,7 @@ void a1(int input)
         for (dimes = rem_q / 10; dimes >= 0; dimes--)
         {
             int rem_d = rem_q - dimes * 10;
+
             for (nickels = rem_d / 5; nickels >= 0; nickels--)
             {
                 int rem_n = rem_d - nickels * 5;
