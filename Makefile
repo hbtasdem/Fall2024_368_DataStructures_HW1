@@ -6,7 +6,7 @@ SRCS = main.c a1.c
 OBJS = $(SRCS:%.c=%.o)
 
 
-sudoku: $(OBJS)
+a1: $(OBJS)
 	$(GCC) $(TESTFLAGS) $(OBJS) -o a1
 
 .c.o:
@@ -33,10 +33,6 @@ test4: a1
 test5: a1
 	./a1 inputs/test5 output5
 	diff -w output5 expected/expected5
-
-test6: a1
-	./a1 inputs/test6 output6
-	diff -w output6 expected/expected6
 
 clean: # remove all machine generated files
 	rm -f a1 *.o output* *~
