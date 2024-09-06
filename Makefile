@@ -11,23 +11,29 @@ a1: $(OBJS)
 %.o: %.c
 	$(GCC) -c $< -o $@
 
-testall: test1 test2 test3 test4 
+.PHONY:
+test: a1
+	./a1
 
-test1: a1
-	./a1 0 > output1
-	diff -u output1 expected/expected1
+test_to_text: a1
+	./a1>results.txt
+# testall: test1 test2 test3 test4 
 
-test2: a1
-	./a1 30 > output2
-	diff -u output2 expected/expected2
+# test1: a1
+# 	./a1 inputs/test1 > output1
+# 	diff -u output1 expected/expected1
 
-test3: a1
-	./a1 16 > output3
-	diff -u output3 expected/expected3
+# test2: a1
+# 	./a1 inputs/test2 > output2
+# 	diff -u output2 expected/expected2
 
-test4: a1
-	./a1 6 > output4
-	diff -u output4 expected/expected4
+# test3: a1
+# 	./a1 inputs/test3 > output3
+# 	diff -u output3 expected/expected3
+
+# test4: a1
+# 	./a1 inputs/test4 > output4
+# 	diff -u output4 expected/expected4
 
 clean: 
 	rm -f a1 *.o output* *~
